@@ -1,0 +1,106 @@
+.p{
+  border:#ea818187;
+  text-align: left;
+
+}
+.navimg{
+  display: inline-block;
+  position: absolute;
+  left: 50px;
+  top: -10px;
+  
+}
+.nav{
+  display: inline-block;
+  background:    #e06666;
+  border-radius: 1000px;
+  padding:       9px 22px;
+  color:         #ffffff;
+  text-align:    center;
+  margin: 10px;
+  position: relative;
+  left: 150px;
+}
+.nav:hover{
+  background:    #e3838390;
+  color:         #150101;
+}
+h1,h2,h3,h4{
+  font-size: 20px;
+  text-align: center;
+  color:#e06666;
+}
+h3{
+  font-size: 50px;
+  font-family: "Meie Script", cursive;
+  position: absolute;
+  top: 100px;
+  left: 200px;
+}
+h1:hover{
+  color:#150101;
+}
+h4{
+  color: #150101;
+}
+.profil{
+  margin: 100px auto 100px auto;
+  text-align: center;
+  width: 50%;
+  line-height: 1.5;
+  
+}
+.abc{
+  text-align: center;
+}
+
+.photo1{
+  width: 40%;
+  float: left;
+  margin-right: 20px;
+}
+.photo2{
+  width: 25%;
+  float: right;
+  margin-left: 20px;
+}
+.photo3{
+  width: 40%;
+}
+p{
+  text-align: center;
+}
+.photo{
+  width: 70%;
+  position: relative;
+  
+}
+.body{
+  text-align: center;
+}
+.last{
+  border: #150101;
+  background-color: #e06666;
+  height: 100px;
+  width: 100%;
+}.skill{
+  margin: 10px;
+  text-align: center;
+}
+.heading{
+  font-size: 40px;
+  display: inline;
+}
+h1{
+  text-align: right;
+  position: absolute;
+  right: 20px;
+  top: -20px;
+}
+hr{
+  border-color:#e06666;
+  border-width: 5px;
+  border-style: none;
+  border-top-style: dotted ;
+  width: 20%;
+}
