@@ -1,0 +1,36 @@
+.navbar-brand{
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  .nav-link{
+    font-size: 1.5rem;
+  }
+  .navbar{
+    padding: 2% 10%;
+  }
+  .nav-item{
+    padding: 0 18px;
+  }
+  .img1{
+    height: 20px;
+  }
+  .photo{
+    height: 20%;
+  }
+  .container-fluid{
+    padding: 3% 12%;
+    padding-top: 10rem;
+  }
+  .container img{
+    height: 120%; width: 120%; 
+    object-fit: contain;
+  }
+  .title{
+    background-color: #e06666;
+  }
+  body{
+    font-family: "Ubuntu", system-ui;
+  }
+  h1{
+    font-family: 'Courier New', Courier, monospace;
+  }
