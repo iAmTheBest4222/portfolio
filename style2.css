@@ -16,6 +16,8 @@
   }
   .photo{
     height: 20%;
+    position: relative;
+    top: -30px;
   }
   .container-fluid{
     padding: 3% 12%;
@@ -33,4 +35,11 @@
   }
   h1{
     font-family: 'Courier New', Courier, monospace;
+  }
+  .col-4{
+    margin: 0 5%;
+  }
+  .skill{
+    text-align: center;
+    
   }
