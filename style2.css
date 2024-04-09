@@ -25,7 +25,7 @@
     height: 120%; width: 120%; 
     object-fit: contain;
   }
-  .title{
+  #about{
     background-color: #e06666;
   }
   body{
@@ -33,4 +33,10 @@
   }
   h1{
     font-family: 'Courier New', Courier, monospace;
+  }
+  #skills{
+    height: 100vh;
+  }
+  body{
+    text-align: centers;
   }
