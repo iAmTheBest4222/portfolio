@@ -43,4 +43,15 @@
     text-align: center;
     
   }
-  
+  /* footer section*/
+.footer_section {
+  position: relative;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.footer_section p {
+  color: #00204a;
+  padding: 25px 0;
+  margin: 0;
+}
