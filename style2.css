@@ -1,12 +1,28 @@
 .navbar-brand{
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: bold;
+    color: #ffffff;
   }
   .nav-link{
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+  }
+  .nav-link:hover {
+    color: #e06666;
   }
   .navbar{
-    padding: 2% 10%;
+    padding: 1.5% 8%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  .navbar-toggler {
+    border: none;
+  }
+  .navbar-toggler-icon {
+    background-color: #ffffff;
   }
   .nav-item{
     padding: 0 18px;
@@ -23,9 +39,21 @@
     padding: 3% 12%;
     padding-top: 10rem;
   }
-  .container img{
-    height: 120%; width: 120%; 
-    object-fit: contain;
+  .container.mt-5 {
+    margin-top: 7rem !important;
+    padding: 2rem 2rem;
+    border-radius: 10px;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+    overflow: hidden; /* Ensures content stays inside the container */
+  }
+  .container h1, .container h2 {
+    margin-bottom: 1.5rem;
+  }
+  .container img {
+    max-width: 100%; /* Ensures the image does not exceed the container width */
+    height: auto; /* Maintains the aspect ratio of the image */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
   .title{
     background-color: #e06666;
@@ -41,9 +69,56 @@
   }
   .skill{
     text-align: center;
-    
+    margin-top: 2rem;
   }
-  /* footer section*/
+
+.skill .bi {
+    color: #e06666;
+    margin-bottom: 1rem;
+}
+
+.skill h3 {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.skill p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* skill card styles */
+.skill-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.skill-card .card-title {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.skill-card .card-text {
+    font-size: 1rem;
+    color: #555;
+}
+
+.skill-card i {
+    color: #e06666;
+    margin-bottom: 1rem;
+}
+
+/* footer section*/
 .footer_section {
   position: relative;
   background-color: #ffffff;
@@ -54,4 +129,99 @@
   color: #00204a;
   padding: 25px 0;
   margin: 0;
+}
+
+/* Footer styles */
+.footer_section {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 1.5rem 0;
+    text-align: center;
+}
+
+.footer_section a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.footer_section a:hover {
+    color: #e06666;
+}
+
+.footer_section i {
+    margin-right: 8px;
+}
+
+/* card styles */
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.card ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.card ul li {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* project card styles */
+.project-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+    overflow: hidden;
+    height: 100%; /* Ensures consistent height */
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.project-card .card-title {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-card .card-text {
+    font-size: 1rem;
+    color: #555;
+}
+
+.project-card img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Match padding and alignment with skill cards */
+.project-card .card-body {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+/* Portfolio image styles */
+.portfolio-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 200px; /* Increased height for better visibility */
+    object-fit: contain;
+    margin-bottom: 1rem;
 }
