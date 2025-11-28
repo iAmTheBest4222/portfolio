@@ -1,172 +1,491 @@
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="style2.css">
-    <!-- Font Awesome CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <title>Super Developer Quest - Mario Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!-- Favicon and app icons (update files in project root if you want a custom icon) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="pngegg (1).png">
+    <link rel="icon" type="image/png" sizes="16x16" href="pngegg (1).png">
+    <link rel="apple-touch-icon" href="pngegg (1).png">
+    <meta name="theme-color" content="#FF0000">
+    <style>#loading-screen,body{background:var(--mario-black)}#loading-screen,nav{top:0;width:100%;position:fixed}.loading-text,.nav-links a,body{color:var(--mario-white)}.btn,nav{padding:1rem 2rem}#hero,.profile-image,.skill-bar,.skill-category{overflow:hidden}.btn,.hamburger,.project-card,.skill-item{cursor:pointer}#contact,section{min-height:100vh}.achievement-card,.bowser-caption,.hero-content,.profile-card,.project-header,.section-header,footer{text-align:center}.btn,.contact-item,.footer-links a,.nav-links a,.project-link,.social-links a{text-decoration:none}:root{--mario-red:#FF0000;--mario-yellow:#FFFF00;--mario-green:#00AA00;--mario-blue:#0055FF;--mario-sky:#87CEEB;--mario-black:#000000;--mario-white:#FFFFFF;--mario-orange:#FF4500;--mario-brown:#8B4513;--mario-gold:#FFD700;--mario-purple:#8B00FF;--bowser-size:clamp(220px, 28vw, 420px)}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Press Start 2P',cursive,monospace;overflow-x:hidden;line-height:1.8}#loading-screen{left:0;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;z-index:10000;transition:opacity .5s}#loading-screen.hidden{opacity:0;pointer-events:none}.loading-text{font-size:1.5rem;margin-bottom:2rem;animation:1s infinite blink}.hero-title,.nav-logo{color:var(--mario-red)}@keyframes blink{0%,50%{opacity:1}100%,51%{opacity:0}}.loading-coins{display:flex;gap:1rem}.coin{width:30px;height:30px;background:var(--mario-gold);border-radius:50%;border:3px solid var(--mario-orange);animation:.6s infinite coinBounce}.cloud,.cloud::after,.cloud::before{background:var(--mario-white);position:absolute}.coin:nth-child(2){animation-delay:.2s}.coin:nth-child(3){animation-delay:.4s}@keyframes coinBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-20px)}}nav{background:rgba(0,0,0,.9);z-index:1000;border-bottom:4px solid var(--mario-red);box-shadow:0 4px 8px rgba(0,0,0,.5)}.nav-container{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}.nav-logo{font-size:1rem;text-shadow:2px 2px var(--mario-yellow)}.nav-links{display:flex;gap:2rem;list-style:none}.nav-links a{font-size:.7rem;transition:.3s;padding:.5rem 1rem;border-radius:5px}.nav-links a:hover{background:var(--mario-red);transform:translateY(-3px);box-shadow:0 4px 8px rgba(255,0,0,.5)}.hamburger{display:none;flex-direction:column;gap:4px}.hamburger span{width:25px;height:3px;background:var(--mario-yellow);transition:.3s;border-radius:2px}.hamburger.active span:first-child{transform:rotate(45deg) translate(5px,5px)}.hamburger.active span:nth-child(2){opacity:0}.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(7px,-6px)}#progress-bar{position:fixed;top:60px;left:0;width:0;height:4px;background:linear-gradient(to right,var(--mario-green),var(--mario-yellow),var(--mario-red));z-index:999;transition:width .1s}#hero{height:100vh;background:linear-gradient(to bottom,var(--mario-sky) 0,var(--mario-sky) 70%,var(--mario-green) 70%,var(--mario-green) 100%);display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative}.clouds{position:absolute;top:10%;width:100%;height:60%;pointer-events:none}.cloud{border-radius:50px;opacity:.8;animation:20s linear infinite cloudFloat}#about,#skills,.skill-category,.skill-item,section{position:relative}.cloud::after,.cloud::before{content:'';border-radius:50%}.cloud:first-child{width:100px;height:40px;top:20%;left:-100px}.cloud:nth-child(2){width:120px;height:50px;top:50%;left:-120px;animation-delay:5s;animation-duration:25s}.cloud:nth-child(3){width:80px;height:35px;top:70%;left:-80px;animation-delay:10s;animation-duration:30s}@keyframes cloudFloat{0%{transform:translateX(0)}100%{transform:translateX(calc(100vw + 200px))}}.hero-content{z-index:10;animation:1s fadeInUp}@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}.hero-title{font-size:2rem;text-shadow:4px 4px var(--mario-black),6px 6px var(--mario-yellow);margin-bottom:1rem;animation:2s infinite titlePulse}@keyframes titlePulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}.hero-subtitle{font-size:.9rem;color:var(--mario-black);margin-bottom:2rem}.mario-sprite{font-size:4rem;margin:2.5rem 0;animation:1s steps(2) infinite marioWalk}@keyframes marioWalk{0%,100%{content:'🍄'}50%{content:'⭐'}}.mario-character{width:200px;height:200px;margin:2rem auto;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.1);border-radius:15px;border:3px solid var(--mario-yellow)}.luigi-character img,.mario-character img{width:100%;height:100%;object-fit:contain}.cta-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}.btn,.world-badge{display:inline-block;font-size:.7rem}.btn{font-family:'Press Start 2P',cursive;border:none;border-radius:10px;transition:.3s;box-shadow:0 6px 0 rgba(0,0,0,.3)}.about-text,.profile-card{box-shadow:0 8px 16px rgba(0,0,0,.3)}.btn-primary{background:var(--mario-red);color:var(--mario-white)}.btn-secondary{background:var(--mario-green);color:var(--mario-white)}.btn:hover{transform:translateY(-5px);box-shadow:0 10px 0 rgba(0,0,0,.3)}.btn:active{transform:translateY(2px);box-shadow:0 2px 0 rgba(0,0,0,.3)}section{padding:8rem 2rem 6rem}.section-container{max-width:1200px;margin:0 auto}.section-header{margin-bottom:4rem}.world-badge{background:var(--mario-black);color:var(--mario-yellow);padding:.5rem 1.5rem;border-radius:20px;margin-bottom:1rem;border:3px solid var(--mario-yellow)}.section-title{font-size:2rem;margin-bottom:1rem;text-shadow:3px 3px var(--mario-black)}#about{background:linear-gradient(to bottom,var(--mario-sky) 0,var(--mario-sky) 60%,var(--mario-green) 60%)}.about-content{display:grid;grid-template-columns:1fr 2fr;gap:3rem;align-items:center}.profile-card{background:var(--mario-white);padding:2.5rem;border-radius:20px;border:4px solid var(--mario-black)}.profile-image{width:180px;height:180px;background:var(--mario-red);border-radius:50%;margin:0 auto 1.5rem;display:flex;align-items:center;justify-content:center;font-size:5rem;border:4px solid var(--mario-black)}.profile-image img{width:90%;height:90%;object-fit:contain;border-radius:50%}.profile-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.5rem}.stat{background:var(--mario-yellow);padding:1rem;border-radius:10px;border:3px solid var(--mario-black)}.stat-value{font-size:1.2rem;color:var(--mario-red);display:block;margin-bottom:.5rem}.about-text,.stat-label{color:var(--mario-black)}.stat-label{font-size:.5rem}.about-text{background:var(--mario-white);padding:2.5rem;border-radius:20px;border:4px solid var(--mario-black)}.about-text h3{color:var(--mario-red);font-size:1.3rem;margin-bottom:1rem}#skills .section-title,.skill-category h3{color:var(--mario-gold)}.about-text p{font-size:.7rem;line-height:1.8}.luigi-character{width:150px;height:200px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.1);border-radius:15px;border:3px solid var(--mario-green);overflow:hidden}#skills{background:linear-gradient(135deg,#2f1b10 0,#1a0f08 100%);overflow:visible}.achievements-grid,.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}.education-grid,.projects-grid{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}.skill-category{background:linear-gradient(135deg,rgba(139,69,19,.5),rgba(101,50,15,.4));padding:2.5rem;border-radius:20px;border:4px solid var(--mario-brown);box-shadow:0 12px 24px rgba(0,0,0,.7),inset 0 1px 0 rgba(255,255,255,.1);backdrop-filter:blur(4px);transition:.4s cubic-bezier(.34, 1.56, .64, 1)}.skill-category::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--mario-green),var(--mario-yellow),var(--mario-red));opacity:0;transition:opacity .4s}.skill-category:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 18px 36px rgba(255,215,0,.4),inset 0 1px 0 rgba(255,255,255,.2)}.skill-category:hover::before,.skill-item:hover::before{opacity:1}.skill-category h3{font-size:1rem;margin-bottom:1.5rem;text-align:center;text-shadow:2px 2px rgba(0,0,0,.5);letter-spacing:1px}.skill-item{background:linear-gradient(180deg,rgba(255,215,0,.15),rgba(255,215,0,.05));padding:1.2rem;margin-bottom:1rem;border-radius:12px;border:2px solid var(--mario-gold);transition:.35s cubic-bezier(.34, 1.56, .64, 1);box-shadow:0 4px 8px rgba(0,0,0,.3)}.skill-item::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,transparent,var(--mario-yellow),transparent);opacity:0;transition:opacity .3s}.skill-item:hover{background:linear-gradient(180deg,rgba(255,215,0,.35),rgba(255,215,0,.15));transform:translateY(-6px) scale(1.06);box-shadow:0 12px 20px rgba(255,215,0,.5)}.skill-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem}.skill-name{font-size:.7rem;color:var(--mario-white)}#projects .section-title,.project-level{color:var(--mario-yellow)}.contact-icon,.skill-icon{font-size:1.5rem}.skill-bar{background:rgba(0,0,0,.5);height:15px;border-radius:10px;border:2px solid var(--mario-gold)}.skill-progress{height:100%;background:linear-gradient(to right,var(--mario-green),var(--mario-yellow));border-radius:8px;transition:width 1s;display:flex;align-items:center;justify-content:flex-end;padding-right:5px}.plants-decoration-wrapper{position:absolute;bottom:-40px;left:0;right:0;width:100%;height:250px;pointer-events:none;overflow:visible}.plants-decoration{position:absolute;animation:4s ease-in-out infinite float;transition:.3s;pointer-events:auto}#education,#experience,#projects,.timeline,.timeline-item{position:relative}.plants-decoration:first-child{bottom:-20px;left:-60px;animation-delay:0s;transform:scaleX(-1);z-index:5}.plants-decoration:nth-child(2){bottom:-40px;right:-40px;z-index:4;animation:4s ease-in-out 1s infinite float-right}.plants-decoration img{max-width:220px;height:auto;opacity:.75;filter:drop-shadow(0 8px 12px rgba(0,0,0,.5)) brightness(1.05);transition:.3s;display:block}.plants-decoration:hover img{opacity:.95;filter:drop-shadow(0 12px 18px rgba(139, 69, 19, .7)) brightness(1.2);transform:scale(1.1)}@keyframes float{0%,100%{transform:translateY(0) scaleX(-1)}50%{transform:translateY(-20px) scaleX(-1)}}@keyframes float-right{0%,100%{transform:translateY(0)}50%{transform:translateY(-20px)}}#projects{background:linear-gradient(135deg,#8b0000 0,#ff4500 100%)}.projects-grid{display:grid;gap:2rem}.project-card{background:var(--mario-white);border-radius:15px;overflow:hidden;border:4px solid var(--mario-black);box-shadow:0 8px 16px rgba(0,0,0,.5);transition:.3s}.project-card:hover{transform:translateY(-10px) scale(1.03);box-shadow:0 12px 24px rgba(0,0,0,.7)}.project-header{background:var(--mario-red);padding:2rem;border-bottom:4px solid var(--mario-black)}.project-level{font-size:.6rem;margin-bottom:.5rem}.project-name{font-size:1rem;color:var(--mario-white)}#achievements .section-title,#experience .section-title,.project-body,.project-link:hover{color:var(--mario-black)}.project-body{padding:2rem}.project-link,.tech-tag{color:var(--mario-white)}.project-description{font-size:.7rem;line-height:1.6;margin-bottom:1rem}.project-tech{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem}.tech-tag{background:var(--mario-green);padding:.3rem .8rem;border-radius:15px;font-size:.5rem;border:2px solid var(--mario-black)}.project-link{display:inline-block;background:var(--mario-blue);padding:.7rem 1.5rem;border-radius:10px;font-size:.6rem;border:2px solid var(--mario-black);transition:.3s}.project-link:hover{background:var(--mario-yellow);transform:scale(1.05)}.timeline::before,footer{background:var(--mario-black)}#experience{background:linear-gradient(135deg,#ff4500 0,gold 100%)}.timeline{max-width:800px;margin:0 auto}.timeline::before{content:'';position:absolute;left:50%;transform:translateX(-50%);width:4px;height:100%}.timeline-item{margin-bottom:3rem}.timeline-item:nth-child(odd) .timeline-content{margin-left:auto;text-align:left}.timeline-item:nth-child(2n) .timeline-content{margin-right:auto;text-align:right}.timeline-marker{position:absolute;left:50%;transform:translate(-50%,0);width:40px;height:40px;background:var(--mario-red);border:4px solid var(--mario-black);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;z-index:10}.timeline-content{width:45%;background:var(--mario-white);padding:2rem;border-radius:15px;border:4px solid var(--mario-black);box-shadow:0 8px 16px rgba(0,0,0,.3)}.edu-card h3,.timeline-content h3{color:var(--mario-red);font-size:.9rem;margin-bottom:.5rem}.timeline-content .company{color:var(--mario-blue);font-size:.7rem;margin-bottom:.5rem}.timeline-content .duration{color:var(--mario-orange);font-size:.6rem;margin-bottom:1rem}.achievement-card p,.timeline-content p{color:var(--mario-black);font-size:.6rem;line-height:1.6}#education{background:linear-gradient(135deg,#0b3d91 0,#1e90ff 100%)}#education .section-title{color:var(--mario-white)}.education-grid{display:grid;gap:2rem;align-items:start}.edu-card{background:rgba(255,255,255,.96);border-radius:14px;padding:1.5rem;border:4px solid var(--mario-black);box-shadow:0 10px 20px rgba(0,0,0,.4)}.edu-card li,.edu-card p{color:var(--mario-black);font-size:.7rem;line-height:1.6;margin:.25rem 0}.edu-decorations{position:absolute;inset:0;pointer-events:none}.edu-decorations img{position:absolute;height:auto;opacity:.95;transition:transform .35s,opacity .35s}.edu-decorations .edu-pipe{left:-24px;bottom:-10px;width:140px;transform:rotate(-6deg);animation:6s ease-in-out infinite eduFloat}.edu-decorations .edu-plant{right:-36px;bottom:-28px;width:200px;transform:scaleX(-1);animation:6s ease-in-out 1s infinite eduFloat}.edu-decorations .edu-luigi{right:12px;top:-48px;width:160px;transform:rotate(4deg);animation:6s ease-in-out .5s infinite eduFloat}@keyframes eduFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}#achievements{background:linear-gradient(to bottom,var(--mario-sky) 0,#ffb6c1 100%);position:relative}.achievement-card{background:var(--mario-white);padding:2.5rem;border-radius:15px;border:4px solid var(--mario-black);box-shadow:0 8px 16px rgba(0,0,0,.3);transition:.3s;cursor:pointer}.achievement-card:hover{transform:translateY(-10px) rotate(2deg);box-shadow:0 12px 24px rgba(0,0,0,.5)}.achievement-icon{font-size:5rem;margin-bottom:1.5rem;animation:3s ease-in-out infinite float}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}.achievement-card h3{color:var(--mario-red);font-size:.9rem;margin-bottom:1rem}#contact{background:linear-gradient(135deg,#000 0,#8b0000 100%);position:relative}#contact .section-title{color:var(--mario-red);animation:.5s infinite shake}@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}.contact-container{display:grid;grid-template-columns:1fr;gap:3rem;align-items:start}.boss-wrapper{display:grid;grid-template-columns:360px 1fr;gap:2.5rem;align-items:center}.boss-left{display:flex;flex-direction:column;align-items:center;gap:1rem}.bowser-character{width:var(--bowser-size);height:var(--bowser-size);display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 30% 20%,rgba(255,200,0,.12),rgba(255,0,0,.08));border-radius:20px;border:6px solid transparent;background-clip:padding-box;box-shadow:0 20px 40px rgba(0,0,0,.6),0 6px 0 rgba(0,0,0,.6) inset;position:relative;overflow:visible;transform:rotate(-6deg)}.bowser-character::after{content:'';position:absolute;inset:-6px;border-radius:24px;background:linear-gradient(135deg,rgba(255,0,0,.9),rgba(139,0,0,.7));z-index:-1;filter:blur(6px);opacity:.8}.bowser-character img{width:95%;height:95%;object-fit:contain;display:block;border-radius:8px}.bowser-caption{font-size:.7rem;color:var(--mario-yellow);text-shadow:2px 2px var(--mario-black)}.boss-right{display:flex;flex-direction:column;gap:1.5rem}.boss-message,.contact-item,.contact-methods,.social-links{gap:1rem;display:flex}.boss-message{background:linear-gradient(90deg,rgba(255,0,0,.15),rgba(255,200,0,.08));padding:3rem;border-radius:18px;border:4px solid rgba(255,0,0,.9);box-shadow:0 16px 32px rgba(0,0,0,.6);flex-direction:column}.boss-message h3{color:var(--mario-yellow);font-size:1.1rem;margin-bottom:0;letter-spacing:1px}.boss-message p{color:var(--mario-white);font-size:.75rem;line-height:1.6;margin:0}.contact-form.redesigned{background:linear-gradient(180deg,#fff 0,#f3f3f3 100%);padding:2rem;border-radius:14px;border:4px solid var(--mario-black);box-shadow:0 12px 24px rgba(0,0,0,.45)}.contact-methods{flex-direction:column}.contact-item{background:var(--mario-white);color:var(--mario-black);padding:1rem 1.5rem;border-radius:10px;border:3px solid var(--mario-black);align-items:center;transition:.3s}.contact-item:hover{background:var(--mario-yellow);transform:translateX(10px);box-shadow:0 4px 8px rgba(0,0,0,.3)}.contact-text{font-size:.6rem}.contact-form{background:rgba(255,255,255,.95);padding:2.5rem;border-radius:15px;border:4px solid var(--mario-black);box-shadow:0 8px 16px rgba(0,0,0,.5)}.form-group{margin-bottom:1.5rem}.form-group label{display:block;color:var(--mario-black);font-size:.7rem;margin-bottom:.5rem}.copyright,.footer-text,.social-links a{color:var(--mario-white)}.form-group input,.form-group textarea{width:100%;padding:.8rem;border:3px solid var(--mario-black);border-radius:10px;font-family:'Press Start 2P',cursive;font-size:.6rem;background:var(--mario-white)}.form-group textarea{min-height:120px;resize:vertical}.form-group input:focus,.form-group textarea:focus{outline:0;border-color:var(--mario-red);box-shadow:0 0 0 3px rgba(255,0,0,.2)}.social-links{margin-top:1.5rem;justify-content:center}.social-links a{display:inline-block;background:var(--mario-green);padding:.6rem 1.2rem;border-radius:8px;font-size:.6rem;border:2px solid var(--mario-black);transition:.3s}.social-links a:hover{background:var(--mario-yellow);color:var(--mario-black)}footer{padding:4rem 2rem;border-top:4px solid var(--mario-red)}.footer-content h2{color:var(--mario-red);font-size:1.5rem;margin-bottom:1rem;animation:1.5s infinite blink}.footer-text{font-size:.6rem;line-height:1.8;margin-bottom:1rem}.footer-links{display:flex;justify-content:center;gap:2rem;margin:2rem 0;flex-wrap:wrap}.footer-links a{color:var(--mario-yellow);font-size:.6rem;transition:.3s}.footer-links a:hover{color:var(--mario-red);transform:scale(1.1)}.copyright{font-size:.5rem;margin-top:2rem}@media (max-width:968px){.edu-decorations .edu-plant{width:140px;right:-18px;bottom:-14px}.edu-decorations .edu-pipe{width:100px;left:-12px;bottom:-6px}.edu-decorations .edu-luigi{width:120px;top:-30px;right:6px}.about-content,.boss-wrapper,.contact-container{grid-template-columns:1fr}.bowser-character{transform:rotate(0);margin:0 auto}.nav-links{position:fixed;top:60px;right:-100%;flex-direction:column;background:rgba(0,0,0,.95);width:100%;padding:2rem;transition:right .3s;border-top:4px solid var(--mario-red)}.nav-links.active{right:0}.hamburger{display:flex}.hero-title{font-size:1.2rem}.hero-subtitle{font-size:.7rem}.timeline-marker,.timeline::before{left:20px}.timeline-content{width:calc(100% - 80px);margin-left:60px!important;text-align:left!important}.section-title{font-size:1.3rem}}@media (max-width:600px){.edu-decorations .edu-luigi,.edu-decorations .edu-plant{display:none}.edu-decorations .edu-pipe{width:90px;left:8px;bottom:-6px}.hero-title{font-size:.9rem}.btn{font-size:.6rem;padding:.8rem 1.5rem}.achievements-grid,.profile-stats,.projects-grid,.skills-grid{grid-template-columns:1fr}}.fade-in{opacity:0;transform:translateY(30px);transition:opacity .6s,transform .6s}.fade-in.visible{opacity:1;transform:translateY(0)}::-webkit-scrollbar{width:12px}::-webkit-scrollbar-track{background:var(--mario-black)}::-webkit-scrollbar-thumb{background:var(--mario-red);border-radius:6px;border:2px solid var(--mario-black)}::-webkit-scrollbar-thumb:hover{background:var(--mario-yellow)}
+    </style>
 </head>
-
 <body>
-    <section class="title" id="scrollspyHeading1">
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#scrollspyHeading1">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#scrollspyHeading2">Skills</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">Projects</a>
-                        <ul class="dropdown-menu bg-dark">
-                            <li><a class="dropdown-item link-light" href="cal.html">Calculator</a></li>
-                            <li><a class="dropdown-item link-light" href="index2.html">Template</a></li>
-                            <li><a class="dropdown-item link-light" href="guess-number.html">Guess the Number</a></li>
-                            <li><a class="dropdown-item link-light" href="bird-fly-game.html">Bird Fly Game</a></li>
-                            <li>
-                                <hr class="dropdown-divider bg-light">
-                            </li>
-                            <li><a class="dropdown-item link-light"
-                                    href="https://github.com/iAmTheBest4222/wine_quality_predicton">Wine Quality
-                                    Prediction</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#scrollspyHeading6">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <a class="navbar-brand" href="#">Portfolio</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
-                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </nav>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loading-text">PRESS START</div>
+        <div class="loading-coins">
+            <div class="coin"></div>
+            <div class="coin"></div>
+            <div class="coin"></div>
+        </div>
+    </div>
 
-        <div class="container mt-5">
-            <div class="row">
-                <div class="col-lg-6">
-                    <h1>Divyanshu Mishra</h1>
-                    <p>Full-Stack Developer with expertise in Express, Flask, and SQL, aiming to leverage hands-on
-                        experience in building scalable web apps and backend systems to solve real-world challenges.</p>
-                    <a href="https://linkedin.com/in/divyanshu-mishra">
-                        <button type="button" class="btn btn-dark btn-lg">LinkedIn</button>
-                    </a>
-                    <a href="mailto:divyanshu.mishracs22@gla.ac.in">
-                        <button type="button" class="btn btn-outline-dark btn-lg">Email</button>
-                    </a>
+    <!-- Progress Bar -->
+    <div id="progress-bar"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">SUPER DEV</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero">Start</a></li>
+                <li><a href="#about">World 1-1</a></li>
+                <li><a href="#skills">World 1-2</a></li>
+                <li><a href="#projects">World 2</a></li>
+                <li><a href="#experience">World 3</a></li>
+                <li><a href="#achievements">World 4</a></li>
+                <li><a href="#contact">Final Boss</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="clouds">
+            <div class="cloud"></div>
+            <div class="cloud"></div>
+            <div class="cloud"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">WELCOME TO DIVYANSHU'S QUEST</h1>
+            <p class="hero-subtitle">Begin Your Adventure Through Code</p>
+            <div class="mario-character">
+                <img src="Mario Hero.png" alt="Mario Character">
+            </div>
+            <div class="cta-buttons">
+                <a href="#about" class="btn btn-primary">START QUEST</a>
+                <a href="#projects" class="btn btn-secondary">VIEW LEVELS</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section - World 1-1 -->
+    <section id="about">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="world-badge">WORLD 1-1</div>
+                <h2 class="section-title" style="color: var(--mario-green);">GREEN PLAINS</h2>
+            </div>
+            <div class="about-content fade-in">
+                <div class="profile-card">
+                    <div class="profile-image">
+                        <img src="pngegg.png" alt="Developer">
+                    </div>
+                    <h3 style="color: var(--mario-black); font-size: 1rem; margin-bottom: 1rem;">Divyanshu Mishra</h3>
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <span class="stat-value" data-target="100">0</span>
+                            <span class="stat-label">COINS</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value" data-target="999">0</span>
+                            <span class="stat-label">POINTS</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value" data-target="3">0</span>
+                            <span class="stat-label">LIVES</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-6">
-                    <img src="assets/Ecosystem-bro.svg" class="img-fluid" alt="photo">
+                <div class="about-text">
+                    <h3>About The Hero</h3>
+                    <p>A passionate computer science student from GLA University preparing for technical interviews with focus on DSA, full-stack development, and cryptography.</p>
+                    <p style="margin-top: 1rem;">Just like Mario's journey through the Mushroom Kingdom, my coding adventure is filled with challenges, power-ups (new technologies), and endless levels to conquer. Each project is a new world, each bug is a Goomba to defeat, and each successful deployment is a flag at the end of the level!</p>
+                    <p style="margin-top: 1rem;">Currently leveling up skills in MERN stack development, competitive programming, and exploring the cryptographic realms of computer science.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="container mt-5" id="scrollspyHeading2">
-        <div class="card p-4 mb-4">
-            <h2 class="heading">Skills</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="skill-card card text-center">
-                        <div class="card-body">
-                            <img src="assets/Programming-amico.svg" alt="Programming" class="img-fluid portfolio-image">
-                            <h3 class="card-title">Programming</h3>
-                            <p class="card-text">Proficient in Python, C, and Java with strong problem-solving skills.
-                            </p>
+    <!-- Skills Section - World 1-2 -->
+    <section id="skills">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="world-badge">WORLD 1-2</div>
+                <h2 class="section-title">UNDERGROUND CAVERN</h2>
+            </div>
+            <div class="skills-grid fade-in">
+                <div class="skill-category">
+                    <h3>🍄 Languages</h3>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Python</span>
+                            <span class="skill-icon">🐍</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">JavaScript</span>
+                            <span class="skill-icon">📜</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Java</span>
+                            <span class="skill-icon">☕</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="80"></div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="skill-card card text-center">
-                        <div class="card-body">
-                            <img src="assets/Programming-pana.svg" alt="Web Development"
-                                class="img-fluid portfolio-image">
-                            <h3 class="card-title">Web Development</h3>
-                            <p class="card-text">Experienced in HTML, CSS, JavaScript, Express, and Flask for building
-                                responsive web apps.</p>
+
+                <div class="skill-category">
+                    <h3>🌟 Web Frameworks</h3>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">HTML ,CSS </span>
+                            <span class="skill-icon">⚛️</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">React</span>
+                            <span class="skill-icon">⚛️</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Node.js</span>
+                            <span class="skill-icon">🟢</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="80"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Flask</span>
+                            <span class="skill-icon">⚛️</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="85"></div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="skill-card card text-center">
-                        <div class="card-body">
-                            <img src="assets/Analyze-amico.svg" alt="Databases" class="img-fluid portfolio-image">
-                            <h3 class="card-title">Databases</h3>
-                            <p class="card-text">Skilled in MongoDB, MySQL, SQLite, and SQLAlchemy for efficient data
-                                management.</p>
+
+                <div class="skill-category">
+                    <h3>⭐ Tools</h3>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Git</span>
+                            <span class="skill-icon">🔧</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">VS Code</span>
+                            <span class="skill-icon">💻</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Postman</span>
+                            <span class="skill-icon">🔧</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Jupyter</span>
+                            <span class="skill-icon">🔧</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="85"></div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="skill-card card text-center">
-                        <div class="card-body">
-                            <img src="assets/Data extraction-pana.svg" alt="Tools" class="img-fluid portfolio-image">
-                            <h3 class="card-title">Tools</h3>
-                            <p class="card-text">Proficient in Git, GitHub, Postman, Jupyter, and OpenCV for development
-                                and debugging.</p>
+
+                <div class="skill-category">
+                    <h3>🌟 DataBases</h3>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">MongoDB </span>
+                            <span class="skill-icon">⚛️</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">MySQL</span>
+                            <span class="skill-icon">⚛️</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">SQLite</span>
+                            <span class="skill-icon">🟢</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="80"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">SQLAlchemy</span>
+                            <span class="skill-icon">⚛️</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="85"></div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="skill-card card text-center">
-                        <div class="card-body">
-                            <img src="assets/Team goals-pana.svg" alt="Other" class="img-fluid portfolio-image">
-                            <h3 class="card-title">Other</h3>
-                            <p class="card-text">Experienced in API integration, responsive design, and RESTful
-                                services.</p>
+
+                <div class="skill-category">
+                    <h3>🌟 Others</h3>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">API Intregations </span>
+                            <span class="skill-icon">⚛️</span>
                         </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Responsive Design</span>
+                            <span class="skill-icon">⚛️</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Restfull Services</span>
+                            <span class="skill-icon">🟢</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="80"></div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+            <div class="plants-decoration-wrapper">
+                <div class="plants-decoration">
+                    <img src="Plants.png" alt="Piranha Plant">
+                </div>
+                <div class="plants-decoration">
+                    <img src="plant2.png" alt="Plants">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section - World 2 -->
+    <section id="projects">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="world-badge">WORLD 2</div>
+                <h2 class="section-title">CASTLE LEVELS</h2>
+            </div>
+            <div class="projects-grid fade-in">
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-level">LEVEL 1-1</div>
+                        <h3 class="project-name">Eomma<br>AI-Powered food nutrition analyzer </h3>
+                    </div>
+                    <!-- AI-Powered food nutrition analyzer -->
+                    <div class="project-body">
+                        <p class="project-description"> Developed a barcode scanning tool for nutritional analysis of food items with real-time processing using Python, Flask, and OpenCV for image recognition.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">OpenCV</span>
+                        </div>
+                        <a href="https://eomma.onrender.com/" class="project-link" target="_blank">VIEW PROJECT →</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-level">Internship</div>
+                        <h3 class="project-name">ByteMatrix Portfolio</h3>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-description">Design and Developed Fully functional portfolio website showcasing projects and skills using React and Express.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Express</span>
+                            <span class="tech-tag">FullStack</span>
+                        </div>
+                        <a href="bytematrixwebsite.vercel.app" class="project-link" target="_blank">VIEW PROJECT →</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-level">LEVEL 1-2</div>
+                        <h3 class="project-name">Wine Quality Prediction</h3>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-description">Predicts wine quality based on physicochemical properties, achieving 85% accuracy using machine learning algorithms and statistical analysis.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">ML</span>
+                            <span class="tech-tag">GitHub</span>
+                        </div>
+                        <a href="https://github.com/iAmTheBest4222/wine_quality_predicton.git" class="project-link" target="_blank">VIEW PROJECT →</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-level">LEVEL 2-1</div>
+                        <h3 class="project-name">Travel Booking Website</h3>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-description">Built a dynamic travel platform with authentication, booking management, and role-based dashboards using Flask and SQLite with full responsive design.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">SQLite</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                        <a href="#" class="project-link" target="_blank">VIEW PROJECT →</a>
+                    </div>
+                </div>
+
+                
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-level">LEVEL 2-2</div>
+                        <h3 class="project-name">Guess the Number</h3>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-description">A fun interactive game where users guess a randomly generated number. Built using HTML, CSS, and JavaScript with an elegant arched design style and smooth animations.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <a href="https://iamthebest4222.github.io/web-projects/" class="project-link" target="_blank">VIEW PROJECT →</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-level">LEVEL 3-1</div>
+                        <h3 class="project-name">Bird Fly Game</h3>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-description">An interactive game where players control a bird to avoid obstacles and collect power-ups. Developed using HTML, CSS, and JavaScript with dynamic gameplay mechanics.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <a href="https://iamthebest4222.github.io/web-games/" class="project-link" target="_blank">VIEW PROJECT →</a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="container mt-5">
-        <div class="card p-4 mb-4">
-            <h2 class="heading">Education</h2>
-            <div class="row align-items-center">
-                <div class="col-md-4">
-                    <img src="assets/Book lover-pana.svg" alt="Education" class="img-fluid portfolio-image">
+    <!-- Experience Section - World 3 -->
+    <section id="experience">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="world-badge">WORLD 3</div>
+                <h2 class="section-title">VOLCANO LANDS</h2>
+            </div>
+            <div class="timeline fade-in">
+                <div class="timeline-item">
+                    <div class="timeline-marker">🔬</div>
+                    <div class="timeline-content">
+                        <h3>Data Science Intern</h3>
+                        <div class="company">Corizo EduTech, Noida</div>
+                        <div class="duration">June 2023 – Aug 2023</div>
+                        <p>Diagnosed data discrepancies to improve analytics accuracy for decision-making. Developed reusable Python templates that boosted project efficiency by 15% and collaborated with cross-functional teams to resolve data challenges.</p>
+                    </div>
                 </div>
-                <div class="col-md-8">
-                    <ul>
-                        <li>B.Tech in Computer Science, GLA University, Mathura (2022-2026) - CGPA: 6.84</li>
-                        <li>B.Sc. in Data Science, IIT Madras (2023-Present) - CGPA: 7.5</li>
-                        <li>Foundation Level of Data Science and Applications, IIT Madras (Completed 2024)</li>
-                    </ul>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">🤖</div>
+                    <div class="timeline-content">
+                        <h3>Machine Learning Trainee</h3>
+                        <div class="company">Technotran, Nellore</div>
+                        <div class="duration">Apr 2022 – Jul 2022</div>
+                        <p>Trained on machine learning fundamentals and models including linear regression and decision trees. Developed and optimized ML models using Python and scikit-learn, focusing on model performance and validation.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">💻</div>
+                    <div class="timeline-content">
+                        <h3>Full-Stack Web Developer</h3>
+                        <div class="company">ByteMatrix</div>
+                        <div class="duration">2024</div>
+                        <p>Designed, deployed, and integrated pipelines for a full-stack e‑commerce website, including CI/CD workflows, backend APIs, and responsive frontend components.</p>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="card p-4 mb-4">
-            <h2 class="heading">Experience</h2>
-            <ul>
-                <li><strong>Data Science Intern, Corizo EduTech, Noida (June 2023–Aug 2023):</strong> Diagnosed data
-                    discrepancies, improving analytics accuracy for decision-making. Developed reusable Python
-                    templates, boosting project efficiency by 15%. Collaborated with cross-functional teams on data
-                    challenges.</li>
-                <li><strong>Machine Learning Trainee, Technotran, Nellore (Apr 2022–Jul 2022):</strong> Trained on
-                    machine learning models (linear regression, decision trees). Developed and optimized ML models using
-                    Python and scikit-learn.</li>
-            </ul>
-        </div>
+    <!-- Achievements Section - World 4 -->
+    <!-- Education Section -->
+    <section id="education">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="world-badge">EDUCATION</div>
+                <h2 class="section-title">SCHOLARSHIP & CERTIFICATES</h2>
+            </div>
 
-        <div class="card p-4 mb-4">
-            <h2 class="heading">Certifications</h2>
-            <div class="row align-items-center">
-                <div class="col-md-4">
-                    <img src="assets/Certification-pana.svg" alt="Certifications" class="img-fluid portfolio-image">
+            <div class="education-grid fade-in">
+                <div class="edu-card">
+                    <h3>B.Tech in Computer Science</h3>
+                    <p><strong>GLA University, Mathura</strong> (2022 – 2026)</p>
+                    <p>CGPA: 6.9</p>
+                    <hr style="border:0;border-top:2px dashed rgba(0,0,0,0.08);margin:0.75rem 0;">
+                    <h3>B.Sc. in Data Science</h3>
+                    <p><strong>IIT Madras</strong> (2023 – Present)</p>
+                    <p>CGPA: 7.3</p>
                 </div>
-                <div class="col-md-8">
+
+                <div class="edu-card">
+                    <h3>Certificates & Training</h3>
                     <ul>
                         <li>Software Engineering - NPTEL (IIT Kharagpur)</li>
                         <li>Python for Data Science - NPTEL (IIT Madras)</li>
@@ -175,113 +494,125 @@
                     </ul>
                 </div>
             </div>
-        </div>
 
-        <div class="card p-4 mb-4">
-            <h2 class="heading">Hackathons and Projects</h2>
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <div class="project-card card">
-                        <img src="assets/buffer-stock.svg" class="card-img-top portfolio-image"
-                            alt="Buffer Stock Prediction">
-                        <div class="card-body">
-                            <h3 class="card-title">Smart India Hackathon (2024)</h3>
-                            <p class="card-text">Developed Buffer Stock Prediction to reduce perishable goods waste by
-                                25%, using machine learning to predict optimal buffer stock levels.</p>
-                        </div>
-                    </div>
+            <div class="edu-decorations">
+                <img src="pipe.png" class="edu-pipe" alt="Pipe Decoration">
+                <img src="plant2.png" class="edu-plant" alt="Plant Decoration">
+                <img src="Luigi.png" class="edu-luigi" alt="Luigi Decoration">
+            </div>
+        </div>
+    </section>
+    <section id="achievements">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="world-badge">WORLD 4</div>
+                <h2 class="section-title">SKY LEVELS</h2>
+            </div>
+            <div class="achievements-grid fade-in">
+                <div class="achievement-card">
+                    <div class="achievement-icon">🏆</div>
+                    <h3>Smart India Hackathon 2024</h3>
+                    <p>Finalist - Buffer Stock Prediction using Machine Learning and Data Analytics</p>
                 </div>
-                <div class="col-md-6 mb-4">
-                    <div class="project-card card">
-                        <img src="assets/wine-quality.svg" class="card-img-top portfolio-image"
-                            alt="Wine Quality Prediction">
-                        <div class="card-body">
-                            <h3 class="card-title">Wine Quality Prediction Project</h3>
-                            <p class="card-text">Predicts wine quality based on physicochemical properties, achieving
-                                85% accuracy. <a
-                                    href="https://github.com/iAmTheBest4222/wine_quality_predicton">GitHub</a></p>
-                        </div>
-                    </div>
+
+                <div class="achievement-card">
+                    <div class="achievement-icon">🥈</div>
+                    <h3>Compassion-a-thon 2024</h3>
+                    <p>2nd Place - IIT Madras | Developed innovative solution for social impact</p>
                 </div>
-                <div class="col-md-6 mb-4">
-                    <div class="project-card card">
-                        <img src="assets/travel-booking.jpg" class="card-img-top" alt="Travel Booking Website"
-                            style="height: 100px; object-fit: cover;">
-                        <div class="card-body">
-                            <h3 class="card-title">Travel Booking Website</h3>
-                            <p class="card-text">Built a dynamic travel platform with authentication, booking
-                                management, and role-based dashboards using Flask and SQLite.</p>
-                        </div>
-                    </div>
+
+                <div class="achievement-card">
+                    <div class="achievement-icon">⭐</div>
+                    <h3>Competitive Programming</h3>
+                    <p>Active on LeetCode &amp; Codeforces | Solved 500+ problems across various difficulty levels</p>
                 </div>
-                <div class="col-md-6 mb-4">
-                    <div class="project-card card">
-                        <img src="assets/food-analysis.jpg" class="card-img-top" alt="Food Item Analysis"
-                            style="height: 100px; object-fit: cover;">
-                        <div class="card-body">
-                            <h3 class="card-title">Food Item Analysis</h3>
-                            <p class="card-text">Developed a barcode scanning tool for nutritional analysis of food
-                                items using Python, Flask, and OpenCV.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section - Final Boss -->
+    <section id="contact">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="world-badge">FINAL BOSS</div>
+                <h2 class="section-title">BOWSER'S CASTLE</h2>
+            </div>
+            <div class="contact-container fade-in">
+                <div class="boss-wrapper">
+                    <div class="boss-left">
+                        <div class="bowser-character">
+                            <img src="Bowser.png" alt="Bowser Character">
                         </div>
+                        <div class="bowser-caption">FINAL BOSS — Bowser</div>
                     </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <div class="project-card card">
-                        <img src="assets/guess-number.jpg" class="card-img-top" alt="Guess the Number"
-                            style="height: 100px; object-fit: cover;">
-                        <div class="card-body">
-                            <h3 class="card-title">Arched Style Guess the Number</h3>
-                            <p class="card-text">A fun game where users guess a randomly generated number. Built using
-                                HTML, CSS, and JavaScript with an arched design style.</p>
+
+                    <div class="boss-right">
+                        <div class="boss-message">
+                            <h3>🔥 DEFEAT THE FINAL BOSS TO CONNECT! 🔥</h3>
+                            <p>Collect the power-ups and send a message to complete your quest. Use the links below or summon me directly via email — only the bravest reach the castle!</p>
+                            <div class="contact-methods">
+                                <a href="mailto:divyanshu.mishra_cs22@gla.ac.in" class="contact-item">
+                                    <span class="contact-icon">📧</span>
+                                    <span class="contact-text">divyanshu.mishra_cs22@gla.ac.in</span>
+                                </a>
+                                <a href="https://github.com/iAmTheBest4222" target="_blank" class="contact-item">
+                                    <span class="contact-icon">💻</span>
+                                    <span class="contact-text">GitHub Profile</span>
+                                </a>
+                                <a href="https://www.linkedin.com/in/divyanshu-mishra-073098250/" target="_blank" class="contact-item">
+                                    <span class="contact-icon">💼</span>
+                                    <span class="contact-text">LinkedIn Profile</span>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <div class="project-card card">
-                        <img src="assets/bird-fly-game.jpg" class="card-img-top" alt="Bird Fly Game"
-                            style="height: 100px; object-fit: cover;">
-                        <div class="card-body">
-                            <h3 class="card-title">Bird Fly Game</h3>
-                            <p class="card-text">An interactive game where players control a bird to avoid obstacles.
-                                Developed using HTML, CSS, and JavaScript.</p>
+
+                        <div class="contact-form redesigned">
+                            <form id="contactForm">
+                                <div class="form-group">
+                                    <label for="name">NAME</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">EMAIL</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">MESSAGE</label>
+                                    <textarea id="message" name="message" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary" style="width: 100%;">SEND MESSAGE</button>
+                            </form>
+                            <div class="social-links">
+                                <a href="https://github.com/iAmTheBest4222" target="_blank">GITHUB</a>
+                                <a href="https://www.linkedin.com/in/divyanshu-mishra-073098250/" target="_blank">LINKEDIN</a>
+                                <a href="mailto:divyanshu.mishra_cs22@gla.ac.in">EMAIL</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-
-
-
-    <footer class="footer_section bg-dark text-white py-4">
-        <div class="container text-center" id="scrollspyHeading6">
-            <div class="row">
-                <div class="col-md-12">
-                    <a href="https://www.linkedin.com/in/divyanshu-mishra-073098250?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
-                        target="_blank" class="text-white me-3">
-                        <i class="fab fa-linkedin fa-lg"></i> LinkedIn
-                    </a>
-                    <a href="https://github.com/iAmTheBest4222" target="_blank" class="text-white me-3">
-                        <i class="fab fa-github fa-lg"></i> GitHub
-                    </a>
-                    <a href="https://drive.google.com/file/d/1hejEuSARyQx7FKfK2xp6A1WJHF-iTCqC/view?usp=sharing"
-                        target="_blank" class="text-white me-3">
-                        <i class="fas fa-file-alt fa-lg"></i> Resume
-                    </a>
-                    <a href="mailto:divyanshu.mishra_cs22@gla.ac.in" class="text-white me-3">
-                        <i class="fas fa-envelope fa-lg"></i> Email
-                    </a>
-                    <span class="text-white">
-                        <i class="fas fa-phone fa-lg"></i> 6396849274
-                    </span>
-                </div>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <h2>GAME OVER</h2>
+            <p class="footer-text">Thanks for playing! Your adventure has been saved.</p>
+            <div class="footer-links">
+                <a href="#hero">Back to Start</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
             </div>
+            <p class="copyright">© 2025 Developer Name | Inspired by Super Mario Bros™ | Nintendo</p>
+            <p class="copyright">Built with ❤️ and lots of 1-UP mushrooms</p>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-</body>
 
+    <script>
+    const _0x2dd2e1=_0x4847;(function(_0x3c7965,_0xe80f87){const _0x491a6f=_0x4847,_0xce658b=_0x3c7965();while(!![]){try{const _0x42337a=parseInt(_0x491a6f(0xcf))/0x1+parseInt(_0x491a6f(0x90))/0x2+-parseInt(_0x491a6f(0xab))/0x3+parseInt(_0x491a6f(0xd1))/0x4+parseInt(_0x491a6f(0x91))/0x5*(parseInt(_0x491a6f(0xd7))/0x6)+-parseInt(_0x491a6f(0xc5))/0x7*(-parseInt(_0x491a6f(0xc8))/0x8)+-parseInt(_0x491a6f(0xd2))/0x9;if(_0x42337a===_0xe80f87)break;else _0xce658b['push'](_0xce658b['shift']());}catch(_0x50ad34){_0xce658b['push'](_0xce658b['shift']());}}}(_0x54c8,0xb7040),document[_0x2dd2e1(0xd3)](_0x2dd2e1(0x99),_0x1d0e07=>_0x1d0e07[_0x2dd2e1(0x97)]()),document['addEventListener']('keydown',_0x521931=>{const _0x12808b=_0x2dd2e1;if(_0x521931[_0x12808b(0x8f)]===_0x12808b(0xb5)||_0x521931[_0x12808b(0xde)]&&_0x521931[_0x12808b(0xce)]&&_0x521931[_0x12808b(0x8f)]==='I'||_0x521931[_0x12808b(0xde)]&&_0x521931[_0x12808b(0xce)]&&_0x521931[_0x12808b(0x8f)]==='C'||_0x521931[_0x12808b(0xde)]&&_0x521931[_0x12808b(0xce)]&&_0x521931['key']==='J'||_0x521931[_0x12808b(0xde)]&&_0x521931[_0x12808b(0x8f)]==='U')return _0x521931[_0x12808b(0x97)](),![];}));let devToolsOpen=![];function _0x54c8(){const _0x52ff2d=['contactForm','none','.fade-in','.project-card','F12','forEach','keydown','message','submit','⬆️\x20⬆️\x20⬇️\x20⬇️\x20⬅️\x20➡️\x20⬅️\x20➡️\x20B\x20A','translateX(','unobserve','click','email','load','body','start','visible','ArrowLeft','animation','7752458AUPGPv','style','textContent','8eHLstv','hamburger','floor','length','!\x20I\x27ll\x20get\x20back\x20to\x20you\x20soon.','target','shiftKey','1021688AHgPTq','observe','3631316vsuyBo','31232664GdhWtN','addEventListener','getAttribute','navLinks','name','30SEJJpr','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20@keyframes\x20projectPulse\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x200%,\x20100%\x20{\x20transform:\x20scale(1);\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x2050%\x20{\x20transform:\x20scale(1.05);\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20','0px\x200px\x20-100px\x200px','clientHeight','smooth','ArrowRight','getElementById','ctrlKey','🍄\x20Try\x20the\x20Konami\x20Code\x20for\x20a\x20surprise!','outerWidth','contains','px)','.skill-progress','remove','href','innerWidth','add','scrollHeight','documentElement','key','1225666iDZcMK','1358865uDEplA','hidden','innerHeight','querySelectorAll','createElement','ArrowUp','preventDefault','warn','contextmenu','loading-screen','🎉\x20LEVEL\x20COMPLETE!\x20🎉\x0a\x0aMessage\x20sent\x20successfully!\x0a\x0aThank\x20you,\x20','.stat-value','isIntersecting','🎮\x20Super\x20Developer\x20Quest\x20loaded\x20successfully!','transform','toggle','reset','active','scrollTop','width','.nav-links\x20a','🎮\x20KONAMI\x20CODE\x20ACTIVATED!\x20🎮\x0a\x0a30\x20EXTRA\x20LIVES!\x0a\x0aYou\x27ve\x20unlocked\x20the\x20secret\x20developer\x20mode!','rainbow\x202s\x20infinite','appendChild','querySelector','log','2366343flOJqV','value','scroll','head','classList','outerHeight'];_0x54c8=function(){return _0x52ff2d;};return _0x54c8();}const threshold=0xa0;setInterval(()=>{const _0x2e032d=_0x2dd2e1;window[_0x2e032d(0xb0)]-window[_0x2e032d(0x93)]>threshold||window[_0x2e032d(0xe0)]-window[_0x2e032d(0x8b)]>threshold?!devToolsOpen&&(devToolsOpen=!![],console[_0x2e032d(0x98)]('DevTools\x20detected.\x20Some\x20features\x20disabled.')):devToolsOpen=![];},0x1f4),window[_0x2dd2e1(0xd3)](_0x2dd2e1(0xbf),()=>{setTimeout(()=>{const _0x535a3b=_0x4847;document['getElementById'](_0x535a3b(0x9a))[_0x535a3b(0xaf)][_0x535a3b(0x8c)](_0x535a3b(0x92));},0x7d0);});const hamburger=document[_0x2dd2e1(0xdd)](_0x2dd2e1(0xc9)),navLinks=document[_0x2dd2e1(0xdd)](_0x2dd2e1(0xd5));hamburger['addEventListener'](_0x2dd2e1(0xbd),()=>{const _0x1e77e0=_0x2dd2e1;hamburger['classList'][_0x1e77e0(0xa0)](_0x1e77e0(0xa2)),navLinks['classList'][_0x1e77e0(0xa0)](_0x1e77e0(0xa2));}),document[_0x2dd2e1(0x94)](_0x2dd2e1(0xa5))[_0x2dd2e1(0xb6)](_0x3be03d=>{const _0x1a43be=_0x2dd2e1;_0x3be03d[_0x1a43be(0xd3)](_0x1a43be(0xbd),()=>{const _0x286ec4=_0x1a43be;hamburger[_0x286ec4(0xaf)][_0x286ec4(0x89)](_0x286ec4(0xa2)),navLinks[_0x286ec4(0xaf)][_0x286ec4(0x89)]('active');});}),document[_0x2dd2e1(0x94)]('a[href^=\x22#\x22]')[_0x2dd2e1(0xb6)](_0x3a3c6f=>{const _0x33721e=_0x2dd2e1;_0x3a3c6f[_0x33721e(0xd3)](_0x33721e(0xbd),function(_0x71c253){const _0x211dd1=_0x33721e;_0x71c253[_0x211dd1(0x97)]();const _0x40b15e=document[_0x211dd1(0xa9)](this[_0x211dd1(0xd4)](_0x211dd1(0x8a)));_0x40b15e&&_0x40b15e['scrollIntoView']({'behavior':_0x211dd1(0xdb),'block':_0x211dd1(0xc1)});});}),window[_0x2dd2e1(0xd3)](_0x2dd2e1(0xad),()=>{const _0x559f45=_0x2dd2e1,_0x1de2fb=document['body'][_0x559f45(0xa3)]||document[_0x559f45(0x8e)]['scrollTop'],_0x8ca099=document[_0x559f45(0x8e)][_0x559f45(0x8d)]-document[_0x559f45(0x8e)][_0x559f45(0xda)],_0x8ff369=_0x1de2fb/_0x8ca099*0x64;document[_0x559f45(0xdd)]('progress-bar')['style']['width']=_0x8ff369+'%';});const observerOptions={'threshold':0.1,'rootMargin':_0x2dd2e1(0xd9)},observer=new IntersectionObserver(_0x477428=>{_0x477428['forEach'](_0x1667aa=>{const _0x31037d=_0x4847;_0x1667aa[_0x31037d(0x9d)]&&_0x1667aa[_0x31037d(0xcd)][_0x31037d(0xaf)][_0x31037d(0x8c)](_0x31037d(0xc2));});},observerOptions);document['querySelectorAll'](_0x2dd2e1(0xb3))[_0x2dd2e1(0xb6)](_0x128508=>{const _0x676ba4=_0x2dd2e1;observer[_0x676ba4(0xd0)](_0x128508);});const animateCounter=(_0x5427c9,_0x312eb3)=>{let _0x2aaf88=0x0;const _0x28ec9e=_0x312eb3/0x64,_0x560e2b=setInterval(()=>{const _0x5a8bd1=_0x4847;_0x2aaf88+=_0x28ec9e,_0x2aaf88>=_0x312eb3?(_0x5427c9[_0x5a8bd1(0xc7)]=_0x312eb3,clearInterval(_0x560e2b)):_0x5427c9[_0x5a8bd1(0xc7)]=Math[_0x5a8bd1(0xca)](_0x2aaf88);},0x14);},counterObserver=new IntersectionObserver(_0x2eec17=>{_0x2eec17['forEach'](_0x4d5448=>{const _0x9a1d58=_0x4847;if(_0x4d5448[_0x9a1d58(0x9d)]){const _0x41d297=parseInt(_0x4d5448[_0x9a1d58(0xcd)][_0x9a1d58(0xd4)]('data-target'));animateCounter(_0x4d5448[_0x9a1d58(0xcd)],_0x41d297),counterObserver['unobserve'](_0x4d5448[_0x9a1d58(0xcd)]);}});},{'threshold':0.5});document[_0x2dd2e1(0x94)](_0x2dd2e1(0x9c))[_0x2dd2e1(0xb6)](_0x4556f7=>{const _0x256125=_0x2dd2e1;counterObserver[_0x256125(0xd0)](_0x4556f7);});const skillObserver=new IntersectionObserver(_0x1605a5=>{_0x1605a5['forEach'](_0x30741f=>{const _0x3814f2=_0x4847;if(_0x30741f['isIntersecting']){const _0x53c5ce=_0x30741f[_0x3814f2(0xcd)]['getAttribute']('data-progress');_0x30741f[_0x3814f2(0xcd)][_0x3814f2(0xc6)][_0x3814f2(0xa4)]=_0x53c5ce+'%',skillObserver[_0x3814f2(0xbc)](_0x30741f['target']);}});},{'threshold':0.5});document[_0x2dd2e1(0x94)](_0x2dd2e1(0xe3))[_0x2dd2e1(0xb6)](_0x19bd56=>{const _0x30ae38=_0x2dd2e1;skillObserver[_0x30ae38(0xd0)](_0x19bd56);}),document[_0x2dd2e1(0xdd)](_0x2dd2e1(0xb1))[_0x2dd2e1(0xd3)](_0x2dd2e1(0xb9),_0xc41ecd=>{const _0x92cb0c=_0x2dd2e1;_0xc41ecd[_0x92cb0c(0x97)]();const _0x3f0536=document[_0x92cb0c(0xdd)](_0x92cb0c(0xd6))[_0x92cb0c(0xac)],_0x13725a=document[_0x92cb0c(0xdd)](_0x92cb0c(0xbe))['value'],_0x13d84e=document[_0x92cb0c(0xdd)](_0x92cb0c(0xb8))[_0x92cb0c(0xac)];alert(_0x92cb0c(0x9b)+_0x3f0536+_0x92cb0c(0xcc)),_0xc41ecd[_0x92cb0c(0xcd)][_0x92cb0c(0xa1)]();});let marioSprites=['🍄','⭐','🌟','💫'],currentSprite=0x0;setInterval(()=>{const _0x1cd4ba=_0x2dd2e1;currentSprite=(currentSprite+0x1)%marioSprites[_0x1cd4ba(0xcb)];const _0xa9a018=document['querySelector']('.mario-sprite');_0xa9a018&&(_0xa9a018[_0x1cd4ba(0xc7)]=marioSprites[currentSprite]);},0x1f4);let konamiCode=[_0x2dd2e1(0x96),_0x2dd2e1(0x96),'ArrowDown','ArrowDown',_0x2dd2e1(0xc3),_0x2dd2e1(0xdc),_0x2dd2e1(0xc3),_0x2dd2e1(0xdc),'b','a'],konamiIndex=0x0;document[_0x2dd2e1(0xd3)](_0x2dd2e1(0xb7),_0x510f25=>{const _0x5a418d=_0x2dd2e1;_0x510f25[_0x5a418d(0x8f)]===konamiCode[konamiIndex]?(konamiIndex++,konamiIndex===konamiCode[_0x5a418d(0xcb)]&&(alert(_0x5a418d(0xa6)),document[_0x5a418d(0xc0)][_0x5a418d(0xc6)]['animation']=_0x5a418d(0xa7),konamiIndex=0x0)):konamiIndex=0x0;});const style=document[_0x2dd2e1(0x95)](_0x2dd2e1(0xc6));style['textContent']='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20@keyframes\x20rainbow\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x200%\x20{\x20filter:\x20hue-rotate(0deg);\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20100%\x20{\x20filter:\x20hue-rotate(360deg);\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20',document[_0x2dd2e1(0xae)][_0x2dd2e1(0xa8)](style),window[_0x2dd2e1(0xd3)](_0x2dd2e1(0xad),()=>{const _0x8b6849=_0x2dd2e1,_0x3a71e7=window['pageYOffset'],_0x4cd24d=document[_0x8b6849(0x94)]('.cloud');_0x4cd24d[_0x8b6849(0xb6)]((_0x2e8f2b,_0x230d30)=>{const _0x5609f5=_0x8b6849,_0x12a5a6=(_0x230d30+0x1)*0.5;_0x2e8f2b[_0x5609f5(0xc6)][_0x5609f5(0x9f)]=_0x5609f5(0xbb)+_0x3a71e7*_0x12a5a6+_0x5609f5(0xe2);});}),document[_0x2dd2e1(0x94)](_0x2dd2e1(0xb4))[_0x2dd2e1(0xb6)](_0x234c22=>{const _0x3f9608=_0x2dd2e1;_0x234c22[_0x3f9608(0xd3)]('click',function(_0x1d4b69){const _0xb13593=_0x3f9608;!_0x1d4b69[_0xb13593(0xcd)][_0xb13593(0xaf)][_0xb13593(0xe1)]('project-link')&&(this['style'][_0xb13593(0xc4)]=_0xb13593(0xb2),setTimeout(()=>{const _0x144d60=_0xb13593;this['style'][_0x144d60(0xc4)]='projectPulse\x200.5s\x20ease';},0xa));});});function _0x4847(_0x1f76d1,_0x78278d){const _0x54c844=_0x54c8();return _0x4847=function(_0x484794,_0x38942c){_0x484794=_0x484794-0x89;let _0x3baed8=_0x54c844[_0x484794];return _0x3baed8;},_0x4847(_0x1f76d1,_0x78278d);}const projectStyle=document[_0x2dd2e1(0x95)](_0x2dd2e1(0xc6));projectStyle[_0x2dd2e1(0xc7)]=_0x2dd2e1(0xd8),document['head'][_0x2dd2e1(0xa8)](projectStyle),console[_0x2dd2e1(0xaa)](_0x2dd2e1(0x9e)),console['log'](_0x2dd2e1(0xdf)),console['log'](_0x2dd2e1(0xba));    
+    </script>
+</body>
 </html>
